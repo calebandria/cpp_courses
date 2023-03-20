@@ -13,7 +13,7 @@ void displayStud(student* pst);
 void displayList(student* phead);
 void appendStud(student* phead, string nom, float note);
 void insertAfter(student* phead, string prec, string nom, float note);
-void insertAsHead(student* phead, string nom, float note);
+void insertAsHead(student*& phead, string nom, float note);
 
 int main(){
     cout << "Test sur les listes chainees" << endl;
@@ -25,6 +25,8 @@ int main(){
      appendStud(pel0,"Voahary",10);
      insertAfter(pel0,"Rasoa","Ndriana",17);
      insertAsHead(pel0, "Fara",10);
+     insertAsHead(pel0,"Njara",13);
+     appendStud(pel0,"Mirana",13);
 
 // Traitement
 
@@ -123,13 +125,12 @@ void insertAfter(student* phead, string prec, string nom, float note){
 
 }
 
-void insertAsHead(student* phead, string nom, float note){
+void insertAsHead(student*& phead, string nom, float note){
     student* cursor(phead);
     student* newStudent(nullptr);
     newStudent = addStud(nom,note);
     newStudent->pnext = cursor;
     //initializing the head
-
     phead = newStudent;
 
 }
