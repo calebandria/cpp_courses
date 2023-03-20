@@ -27,6 +27,7 @@ int main(){
      insertAsHead(pel0, "Fara",10);
      insertAsHead(pel0,"Njara",13);
      appendStud(pel0,"Mirana",13);
+     insertAfter(pel0,"Njara","Ndrema",19);
 
 // Traitement
 
